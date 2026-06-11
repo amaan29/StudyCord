@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p(w8u^44@6my8z_5acrzj3mhqa#4xkb53yp2!g^_3i_6r@t94a
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'studycord.onrender.com', 'localhost'
+    'studycord.onrender.com', 'localhost', '127.0.0.1'
 ]
 
 
