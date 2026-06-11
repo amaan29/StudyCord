@@ -49,6 +49,7 @@ AUTH_USER_MODEL = 'base.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,10 +126,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
