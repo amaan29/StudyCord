@@ -1,0 +1,54 @@
+<!-- it is work like a parent to all the other template
+ like a wrapper to all the template
+ alll the functions are stored here for better code
+ then whenver we want to change someting we will just have to do change in main
+ file and it will automatically changed in all the files-->
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% static 'images/favicon1.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>StudyBuddy - Find study partners around the world!</title>
+  </head>
+
+  <body>
+ 
+
+    {% include 'navbar.html' %}    {# #} {# it adds the content of navbar.html content here#}
+        {# adding navbar on top of the block cocntent cause we want it on the top of the page #}
+
+        {% if messages %}       <!-- addding flash messege here so that it works on every page. also i directly imported it from django documentation-->
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+
+    {% block content %}   {# tells where the content is starting #}
+
+       
+
+
+    {% endblock content %}         {# tells where the content is ending #} 
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+    
+  </body>
+</html>
+
+
+
+
+

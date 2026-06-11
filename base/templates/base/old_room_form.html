@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+<!---->
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">   <!-- method=post means it can create and update as well, action="" means where the data will be sent. if no url provided it will send to the same url if provided a specific url then the data will be sent there-->
+        {% csrf_token %}              <!--write this token in every form specifically using POST method. it provides special toekn to every POST operation to protect it from malicious activity-->
+        {{form.as_p}}            <!-- .as_p = wraps every form element around a paragraph tag-->
+        <input type="submit" value="Submit" />  <!-- to submit the form-->
+    </form>
+</div>
+
+
+{% endblock content %}
